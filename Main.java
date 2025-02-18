@@ -3,6 +3,16 @@ import java.io.FileReader;
 import java.util.Scanner;
 
 public class Main {
+
+    /**
+     * This will sort the
+     */
+    public static void heapsort(Player[] pqh)
+    {
+
+    }
+
+
     public static void main(String[] args) {
         PQHeap pq = new PQHeap();
 
@@ -29,6 +39,6 @@ public class Main {
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
-        public static void heapsort(Player[] pqh)
+
     }
 }
