@@ -3,12 +3,23 @@ import java.io.FileReader;
 import java.util.Scanner;
 
 public class Main {
-
     /**
-     * This will sort the
+     * This will sort the heap from highest to lowest
      */
-    public static void heapsort(Player[] pqh)
+    public static void heapsort(Player[] pa)
     {
+        PQHeap heap = new PQHeap();
+
+        for(int i = 0; i < pa.length; i++) {
+            heap.add(pa[i]);
+        }
+
+        int sortedNextOpen = 0;
+        while(!heap.isEmpty()) {
+            Player highest = heap.getHighestScorePlayer();
+            pa[sortedNextOpen] = highest;
+            sortedNextOpen++;
+        }
 
     }
 
@@ -31,7 +42,8 @@ public class Main {
                     score = Integer.parseInt(infile.nextLine());
                     counter++;
                     Player p = new Player(name, score);
-                    //pq.add(p);
+                   pq.add(p);
+
                 }
             }
             infile.close();
@@ -39,6 +51,14 @@ public class Main {
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
+
+        heapsort(pq.getData());
+
+        for(int i = 0; i < pq.getData().length; i++) {
+            System.out.println("Player: " + pq.getData()[i].getName() +
+                    "\n" + " Score: " + pq.getData()[i].getScore());
+        }
+
 
     }
 }

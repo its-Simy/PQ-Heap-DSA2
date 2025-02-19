@@ -11,11 +11,12 @@ public class PQHeap implements PriorityQueue{
     }
 
     /**
-     * Adds a player to the end of the Array
+     * Adds a player to the end of the Array, and calls heapify_UP to sort
      */
     @Override
     public void add(Player a) {
         data[size] = a;
+        heapify_UP(size);
         size++;
     }
 
@@ -36,26 +37,11 @@ public class PQHeap implements PriorityQueue{
     }//end swap method
 
     /**
-     *Will return the player with the highest score in the Array
+     *Will return the player with the highest score in the Array, which should be the first
      */
     @Override
     public Player getHighestScorePlayer() {
-        Player highestScore = data[0];
-
-        int index = size-1;
-        //first identify the parent index, then gets the data for it
-        int parent_index = getParentIndex(size);
-
-        while((index > 0) && (data[index].getScore() < data[parent_index].getScore())){
-            swap(index, parent_index);
-            index = getParentIndex(index);
-            parent_index = getParentIndex(index);
-        }//end while loop
-
-
-        remove_Player(index);
-
-        return highestScore;
+        return data[0];
     }
 
     /**
@@ -105,8 +91,9 @@ public class PQHeap implements PriorityQueue{
 
     public void heapify_DOWN(int index){
 
-
     }
 
-
+    public Player[] getData() {
+        return data;
+    }
 }
