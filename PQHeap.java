@@ -41,7 +41,7 @@ public class PQHeap implements PriorityQueue{
     @Override
     public Player getHighestScorePlayer() {
         Player highestScore = data[0];
-        
+
         int index = size-1;
         //first identify the parent index, then gets the data for it
         int parent_index = getParentIndex(size);
@@ -90,4 +90,23 @@ public class PQHeap implements PriorityQueue{
     public void remove_Player(int index){
         data[index] = null;
     }
+
+    public void heapify_UP(int index){
+        //first identify the parent index, then gets the data for it
+        int parent_index = getParentIndex(index);
+
+        while((index > 0) && (data[index].getScore() > data[parent_index].getScore())){
+            swap(index, parent_index);
+            index = getParentIndex(index);
+            parent_index = getParentIndex(index);
+        }//end while loop
+
+    }
+
+    public void heapify_DOWN(int index){
+
+
+    }
+
+
 }
