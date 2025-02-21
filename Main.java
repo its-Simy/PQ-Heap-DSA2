@@ -10,7 +10,11 @@ public class Main {
     {
         PQHeap heap = new PQHeap();
 
+
         for(int i = 0; i < pa.length; i++) {
+            if(pa[i] == null) {
+                break;
+            }
             heap.add(pa[i]);
         }
 
@@ -18,10 +22,13 @@ public class Main {
         while(!heap.isEmpty()) {
             Player highest = heap.getHighestScorePlayer();
             pa[sortedNextOpen] = highest;
+            System.out.println(pa[sortedNextOpen].getName());
             sortedNextOpen++;
         }
 
-    }
+
+
+    }//end of heapsort method
 
 
     public static void main(String[] args) {
@@ -44,6 +51,7 @@ public class Main {
                     Player p = new Player(name, score);
                    pq.add(p);
 
+
                 }
             }
             infile.close();
@@ -52,13 +60,13 @@ public class Main {
             throw new RuntimeException(e);
         }
 
-        heapsort(pq.getData());
+        //heapsort(pq.getData());
 
-        for(int i = 0; i < pq.getData().length; i++) {
+        for(int i = 0; i < pq.getSize(); i++) {
             System.out.println("Player: " + pq.getData()[i].getName() +
                     "\n" + " Score: " + pq.getData()[i].getScore());
         }
 
 
-    }
-}
+    }//end of main method
+}//end of main class

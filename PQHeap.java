@@ -11,7 +11,7 @@ public class PQHeap implements PriorityQueue{
     }
 
     /**
-     * Adds a player to the end of the Array, and calls heapify_UP to sort
+     * Adds a player to the end of the Array, then will attempt to heapify up if it is applicable
      */
     @Override
     public void add(Player a) {
@@ -41,8 +41,13 @@ public class PQHeap implements PriorityQueue{
      */
     @Override
     public Player getHighestScorePlayer() {
-        return data[0];
-    }
+
+        Player highestScore = data[0]; //root player should be the highest scored player
+        heapify_DOWN(size-1);
+        size--;
+        return highestScore;
+
+    }// eng of getHighestScorePlayer method
 
     /**
      * Will remove all the players within the Array
@@ -73,23 +78,40 @@ public class PQHeap implements PriorityQueue{
     /**
      * This removes an element from the array by making it null
      */
-    public void remove_Player(int index){
-        data[index] = null;
+    public void remove_Player(Player r){
+        for(int i = 0; i < size-1; i++){
+            if(data[i].equals(r)){
+                //should be a for loop that calls for the swap
+                data[i] = data[i+1];
+            }
+        }
     }
 
     public void heapify_UP(int index){
-        //first identify the parent index, then gets the data for it
+        //First will check if this is the first node being implemented into the heap
+        if(index == 0){
+            return;
+        }
+        //next will identify the parent index, then gets the data for it
         int parent_index = getParentIndex(index);
 
-        while((index > 0) && (data[index].getScore() > data[parent_index].getScore())){
+        while(data[index].getScore() > data[parent_index].getScore()){
             swap(index, parent_index);
             index = getParentIndex(index);
             parent_index = getParentIndex(index);
         }//end while loop
-
     }
 
     public void heapify_DOWN(int index){
+        Player highest = data[0];
+        int rightMostElement = index;
+
+        data[0] = data[rightMostElement];//sets the root node to the latest addition to the array
+
+        while(data[0].getScore() < data[rightMostElement].getScore()){
+            swap(0, rightMostElement);
+            //highestScore = data[rightMostElement];
+        }
 
     }
 

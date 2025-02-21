@@ -8,6 +8,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PQHeap.java" beforeDir="false" afterPath="$PROJECT_DIR$/PQHeap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PQ-Heap-DSA2/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PQ-Heap-DSA2/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PQ-Heap-DSA2/PQHeap.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PQ-Heap-DSA2/PQHeap.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +41,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
@@ -68,11 +71,36 @@
       <option name="presentableId" value="Default" />
       <updated>1739739383741</updated>
       <workItem from="1739739384900" duration="692000" />
-      <workItem from="1739920099877" duration="6007000" />
+      <workItem from="1739920099877" duration="12195000" />
+      <workItem from="1740078335623" duration="849000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.ArrayIndexOutOfBoundsException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Main.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/Main.java</url>
+          <line>8</line>
+          <properties class="Main" method="heapsort">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
