@@ -60,12 +60,13 @@ public class Main {
             throw new RuntimeException(e);
         }
 
-        //heapsort(pq.getData());
-
+        heapsort(pq.getData());
+        /*
         for(int i = 0; i < pq.getSize(); i++) {
             System.out.println("Player: " + pq.getData()[i].getName() +
                     "\n" + " Score: " + pq.getData()[i].getScore());
         }
+         */
 
 
     }//end of main method

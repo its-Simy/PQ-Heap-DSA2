@@ -23,9 +23,7 @@ public class PQHeap implements PriorityQueue{
     /**
      * This will find the index of the Parent, will adjust size for index implementation
      */
-    public int getParentIndex(int index){
-        return (size-1) / 2;
-    }
+    public int getParentIndex(int index){ return (index-1) / 2; }
 
     /**
      * This will swap the elements in the array
@@ -43,7 +41,7 @@ public class PQHeap implements PriorityQueue{
     public Player getHighestScorePlayer() {
 
         Player highestScore = data[0]; //root player should be the highest scored player
-        heapify_DOWN(size-1);
+        heapify_DOWN(size);
         size--;
         return highestScore;
 
@@ -100,7 +98,7 @@ public class PQHeap implements PriorityQueue{
             index = getParentIndex(index);
             parent_index = getParentIndex(index);
         }//end while loop
-    }
+    }//end of heapify up method
 
     public void heapify_DOWN(int index){
         Player highest = data[0];
