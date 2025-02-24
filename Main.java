@@ -2,6 +2,9 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.Scanner;
 
+/**
+ * This is the general class that will cause the main functionality
+ */
 public class Main {
     /**
      * This will sort the heap from highest to lowest

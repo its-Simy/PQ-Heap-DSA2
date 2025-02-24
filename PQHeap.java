@@ -1,3 +1,7 @@
+/**
+ * This is the PQheap class that will have methods to be able to function like a normal heap
+ * and allow for other things like heap sort
+ */
 public class PQHeap implements PriorityQueue{
     private Player[] data;
     private int size;
@@ -53,12 +57,15 @@ public class PQHeap implements PriorityQueue{
     @Override
     public void clear() {
         for(int i = 0; i < size; i++){
+            if(data[i] == null){
+                break;
+            }
             data[i] = null;
         }
-    }
+    }//end of clear method
 
     /**
-     *Will return the size (not index) of the Array
+     *Will return the size/index of the array Data, not the length
      */
     @Override
     public int getSize() {
@@ -85,6 +92,10 @@ public class PQHeap implements PriorityQueue{
         }
     }
 
+    /**
+     *This will compare the parent node, then if it is greater than the parent node, it will continue to swap until
+     * it is in the appropriate location
+     */
     public void heapify_UP(int index){
         //First will check if this is the first node being implemented into the heap
         if(index == 0){
@@ -100,6 +111,9 @@ public class PQHeap implements PriorityQueue{
         }//end while loop
     }//end of heapify up method
 
+    /**
+     * This will be swapping the root node down, and keep swapping if the children nodes have greater scores
+     */
     public void heapify_DOWN(int index){
         Player highest = data[0];
         int rightMostElement = index;
@@ -113,6 +127,9 @@ public class PQHeap implements PriorityQueue{
 
     }
 
+    /**
+     *This will return the array containing the players
+     */
     public Player[] getData() {
         return data;
     }
