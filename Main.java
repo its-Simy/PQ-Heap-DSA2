@@ -25,7 +25,6 @@ public class Main {
         while(!heap.isEmpty()) {
             Player highest = heap.getHighestScorePlayer();
             pa[sortedNextOpen] = highest;
-            System.out.println(pa[sortedNextOpen].getName());
             sortedNextOpen++;
         }
 
@@ -64,12 +63,12 @@ public class Main {
         }
 
         heapsort(pq.getData());
-        /*
+
         for(int i = 0; i < pq.getSize(); i++) {
             System.out.println("Player: " + pq.getData()[i].getName() +
                     "\n" + " Score: " + pq.getData()[i].getScore());
         }
-         */
+
 
 
     }//end of main method

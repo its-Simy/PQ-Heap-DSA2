@@ -120,7 +120,7 @@ public class PQHeap implements PriorityQueue{
 
         data[0] = data[rightMostElement];//sets the root node to the latest addition to the array
 
-        while(data[0].getScore() < data[rightMostElement].getScore()){
+        while(data[index] != null && (data[0].getScore() < data[rightMostElement].getScore())){
             swap(0, rightMostElement);
             //highestScore = data[rightMostElement];
         }
