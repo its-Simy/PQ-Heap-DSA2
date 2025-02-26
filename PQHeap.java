@@ -122,9 +122,23 @@ public class PQHeap implements PriorityQueue{
 
         while(data[index] != null && (data[0].getScore() < data[rightMostElement].getScore())){
             swap(0, rightMostElement);
-            //highestScore = data[rightMostElement];
+            highest = data[rightMostElement];
         }
 
+    }
+
+    /**
+     *This will return the right child of the current node
+     */
+    public Player getRighChild(int index){
+        return data[(2*index)+2];
+    }
+
+    /**
+     *This will return the left child of the current node
+     */
+    public Player getLeftChild(int index){
+        return data[(2*index)+1];
     }
 
     /**
