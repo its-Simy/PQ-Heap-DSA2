@@ -13,7 +13,7 @@ public class Main {
     {
         PQHeap heap = new PQHeap();
 
-
+        //This will copy every Player from the original heap, into the new one
         for(int i = 0; i < pa.length; i++) {
             if(pa[i] == null) {
                 break;

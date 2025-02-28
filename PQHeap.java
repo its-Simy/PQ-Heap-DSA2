@@ -29,6 +29,15 @@ public class PQHeap implements PriorityQueue{
      */
     public int getParentIndex(int index){ return (index-1) / 2; }
 
+    public int getLeftChildIndex(int index){return (2*index) + 1; }
+
+    public int getRightChildIndex(int index){return (2*index) + 2; }
+
+    /**
+     *This will return the array containing the players
+     */
+    public Player[] getData() { return data; }
+
     /**
      * This will swap the elements in the array
      */
@@ -40,13 +49,15 @@ public class PQHeap implements PriorityQueue{
 
     /**
      *Will return the player with the highest score in the Array, which should be the first
+     * It will also set the right most player as the new root node, and downsize the array
      */
     @Override
     public Player getHighestScorePlayer() {
 
         Player highestScore = data[0]; //root player should be the highest scored player
-        heapify_DOWN(size);
+        data[0] = data[size-1];//overrides sets the last player to the root node
         size--;
+        heapify_DOWN(0);
         return highestScore;
 
     }// eng of getHighestScorePlayer method
@@ -76,38 +87,25 @@ public class PQHeap implements PriorityQueue{
      * Will return true if the Array is empty, false if it is not
      */
     @Override
-    public boolean isEmpty() {
-        return (size == 0);
-    }
-
-    /**
-     * This removes an element from the array by making it null
-     */
-    public void remove_Player(Player r){
-        for(int i = 0; i < size-1; i++){
-            if(data[i].equals(r)){
-                //should be a for loop that calls for the swap
-                data[i] = data[i+1];
-            }
-        }
-    }
+    public boolean isEmpty() { return (size == 0); }
 
     /**
      *This will compare the parent node, then if it is greater than the parent node, it will continue to swap until
      * it is in the appropriate location
      */
     public void heapify_UP(int index){
-        //First will check if this is the first node being implemented into the heap
-        if(index == 0){
-            return;
-        }
         //next will identify the parent index, then gets the data for it
         int parent_index = getParentIndex(index);
+
+        //First will check if this is the first node being implemented into the heap
+        if(index == 0)
+            return;
 
         while(data[index].getScore() > data[parent_index].getScore()){
             swap(index, parent_index);
             index = getParentIndex(index);
             parent_index = getParentIndex(index);
+
         }//end while loop
     }//end of heapify up method
 
@@ -115,36 +113,29 @@ public class PQHeap implements PriorityQueue{
      * This will be swapping the root node down, and keep swapping if the children nodes have greater scores
      */
     public void heapify_DOWN(int index){
-        Player highest = data[0];
-        int rightMostElement = index;
+        while(true) {
+            //These are the variables that are going to be used to check for leaf nodes and the "Parent"/node we want to heapify down
+            int adjust = index;
+            int left = getLeftChildIndex(index);
+            int right = getRightChildIndex(index);
 
-        data[0] = data[rightMostElement];//sets the root node to the latest addition to the array
+            if ((data[left] != null) && (data[left].getScore() > data[adjust].getScore()))
+                adjust = left;
 
-        while(data[index] != null && (data[0].getScore() < data[rightMostElement].getScore())){
-            swap(0, rightMostElement);
-            highest = data[rightMostElement];
-        }
+            if ((data[right] != null) && (data[right].getScore() > data[adjust].getScore()))
+                adjust = right;
 
-    }
+            //if they equal, it should just break the loop
+            if (adjust == index)
+                break;
 
-    /**
-     *This will return the right child of the current node
-     */
-    public Player getRighChild(int index){
-        return data[(2*index)+2];
-    }
+            //if one of the leaf nodes are greater than one another, then it should perform the swap
+            swap(index, adjust);
+            index = adjust;
 
-    /**
-     *This will return the left child of the current node
-     */
-    public Player getLeftChild(int index){
-        return data[(2*index)+1];
-    }
+        }//end of the while loop
+    }//end of the heapify down method
 
-    /**
-     *This will return the array containing the players
-     */
-    public Player[] getData() {
-        return data;
-    }
-}
+
+
+}//end of the pq heap class
