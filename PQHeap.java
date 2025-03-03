@@ -56,11 +56,12 @@ public class PQHeap implements PriorityQueue{
 
         Player highestScore = data[0]; //root player should be the highest scored player
         data[0] = data[size-1];//overrides sets the last player to the root node
+        data[size-1] = null;
         size--;
         heapify_DOWN(0);
         return highestScore;
 
-    }// eng of getHighestScorePlayer method
+    }// end of getHighestScorePlayer method
 
     /**
      * Will remove all the players within the Array
@@ -114,19 +115,22 @@ public class PQHeap implements PriorityQueue{
      */
     public void heapify_DOWN(int index){
         while(true) {
-            //These are the variables that are going to be used to check for leaf nodes and the "Parent"/node we want to heapify down
+            //These are the variables that are going to be used to check for leaf nodes and the "Parent" node we want to heapify down
             int adjust = index;
             int left = getLeftChildIndex(index);
             int right = getRightChildIndex(index);
 
-            if ((data[left] != null) && (data[left].getScore() > data[adjust].getScore()))
+            if((data[left] != null && data[right] != null) && (data[left].getScore() > data[right].getScore()))
                 adjust = left;
 
-            if ((data[right] != null) && (data[right].getScore() > data[adjust].getScore()))
+            else if ((data[left] != null && data[right] != null) && (data[right].getScore() > data[left].getScore()))
                 adjust = right;
 
-            //if they equal, it should just break the loop
-            if (adjust == index)
+            else if ((data[right] == null && data[left] != null) && (data[left].getScore() > data[adjust].getScore()))
+                adjust = left;
+
+            //if they equal or if left and right are null, it should just break the loop
+            if ((adjust == index) || (data[right] == null && data[left] == null))
                 break;
 
             //if one of the leaf nodes are greater than one another, then it should perform the swap

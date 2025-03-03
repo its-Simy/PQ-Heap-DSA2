@@ -6,8 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="6464dafc-da8a-44be-915d-5535f7f45f31" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Info.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Info.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PQHeap.java" beforeDir="false" afterPath="$PROJECT_DIR$/PQHeap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PQ-Heap-DSA2/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PQ-Heap-DSA2/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PQ-Heap-DSA2/PQHeap.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PQ-Heap-DSA2/PQHeap.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -73,7 +74,7 @@
       <workItem from="1739920099877" duration="12195000" />
       <workItem from="1740078335623" duration="19676000" />
       <workItem from="1740529703990" duration="10136000" />
-      <workItem from="1740672484865" duration="9933000" />
+      <workItem from="1740672484865" duration="14929000" />
     </task>
     <servers />
   </component>
@@ -92,6 +93,15 @@
           <line>5</line>
           <properties field="data" class="PQHeap" />
           <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/PQHeap.java</url>
+          <line>114</line>
+          <properties class="PQHeap" method="heapify_DOWN">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
