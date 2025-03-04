@@ -10,7 +10,7 @@ public class PQHeap implements PriorityQueue{
      * Default Constructor
      */
     public PQHeap(){
-        data = new Player[100];
+        data = new Player[2000];
         size = 0;
     }
 
