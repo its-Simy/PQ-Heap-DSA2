@@ -91,7 +91,7 @@ public class Main {
                 break;
         }
 
-
+        System.out.println("\n Demonstration of copy constructor \n");
 
         //Demonstration of PQHeap Copy Constructor
         PQHeap originalHeap = new PQHeap();
@@ -117,7 +117,34 @@ public class Main {
         System.out.println("\nCopied Heap after original was modified:");
         copiedHeap.printHeap();
 
-        //Demonstration of Copy player
+
+
+        System.out.println("\n Demonstration of clone method inside PQHeap \n");
+
+        PQHeap beforeCloneMethod = new PQHeap();
+        beforeCloneMethod.add(new Player("Alice", 50));
+        beforeCloneMethod.add(new Player("Bob", 80));
+        beforeCloneMethod.add(new Player("Charlie", 30));
+
+        System.out.println("\nOriginal PQHeap before modification:");
+        beforeCloneMethod.printHeap();
+
+        PQHeap afterCloneMethod = beforeCloneMethod.createClone();
+        System.out.println("\nCloned PQHeap before orignial modification:");
+        afterCloneMethod.printHeap();
+
+        beforeCloneMethod.add(new Player("David", 90));
+
+        System.out.println("\nOriginal PQHeap before after modification:");
+        beforeCloneMethod.printHeap();
+
+        System.out.println("\nCopied Heap after original was modified:");
+        afterCloneMethod.printHeap();
+
+
+
+        System.out.println("\n Demonstration of copy method inside of player class \n");
+
         Player orignialPlayer = new Player("Messi", 10);
         Player copiedPlayer = orignialPlayer.createClone();
 
@@ -129,13 +156,6 @@ public class Main {
 
         System.out.println("\nOriginal Player after modification: " + orignialPlayer.getName() + " Score: " + orignialPlayer.getScore());
         System.out.println("\nCopied Player after modification: " + copiedPlayer.getName() + " Score: " + copiedPlayer.getScore());
-
-
-
-
-
-
-
 
 
 

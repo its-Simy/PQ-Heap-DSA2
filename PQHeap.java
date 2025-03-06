@@ -160,4 +160,15 @@ public class PQHeap implements PriorityQueue{
         }
     }
 
+    /**
+     *Creates a clone of the current instance of the heap
+     */
+    public PQHeap createClone(){
+        PQHeap pq = new PQHeap();
+        for(int i = 0; i < size; i++){
+            pq.add(data[i].createClone());
+        }
+        return pq;
+    }
+
 }//end of the pq heap class
