@@ -3,10 +3,10 @@
  * Each player contains their name and score.
  */
 public class Player{
+
     /**
      *All the data members needed
      */
-
     private int score;
     private String name;
 
@@ -78,4 +78,4 @@ public class Player{
         return(this.name.equals(p.getName()));
     }
 
-}
+}//end of player class

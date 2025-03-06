@@ -7,7 +7,12 @@
     <list default="true" id="6464dafc-da8a-44be-915d-5535f7f45f31" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Info.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Info.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PQHeap.java" beforeDir="false" afterPath="$PROJECT_DIR$/PQHeap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PriorityQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/PriorityQueue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PQ-Heap-DSA2/Info.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PQ-Heap-DSA2/Info.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PQ-Heap-DSA2/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PQ-Heap-DSA2/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PQ-Heap-DSA2/PQHeap.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PQ-Heap-DSA2/PQHeap.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -73,7 +78,8 @@
       <workItem from="1739920099877" duration="12195000" />
       <workItem from="1740078335623" duration="19676000" />
       <workItem from="1740529703990" duration="10136000" />
-      <workItem from="1740672484865" duration="18162000" />
+      <workItem from="1740672484865" duration="29226000" />
+      <workItem from="1741200983321" duration="9756000" />
     </task>
     <servers />
   </component>
@@ -87,20 +93,14 @@
           <properties class="java.lang.ArrayIndexOutOfBoundsException" package="java.lang" />
           <option name="timeStamp" value="1" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-field">
-          <url>file://$PROJECT_DIR$/PQHeap.java</url>
-          <line>5</line>
-          <properties field="data" class="PQHeap" />
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/PQHeap.java</url>
-          <line>115</line>
-          <properties class="PQHeap" method="heapify_DOWN">
+          <line>110</line>
+          <properties class="PQHeap" method="heapify_UP">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
-          <option name="timeStamp" value="11" />
+          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
